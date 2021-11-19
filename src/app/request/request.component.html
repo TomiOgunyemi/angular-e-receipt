@@ -1,0 +1,19 @@
+
+<main>
+    <table class="table-bordered table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                     <th>Title</th>
+                     <th>Completed</th>
+                </tr>
+            </thead>
+       <tbody class="table-warning">
+           <tr *ngFor="let fetch of fetcher.slice(0,30)">
+               <td>{{fetch.id}}</td>
+               <td>{{fetch.title}}</td>
+               <td><button class="btn" [ngClass]="fetch.completed==true? 'bg-success': 'bg-danger'" >{{fetch.completed}}</button></td>
+           </tr>
+       </tbody>
+    </table>
+</main>

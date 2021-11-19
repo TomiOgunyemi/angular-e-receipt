@@ -1,0 +1,12 @@
+
+ul{
+    background-color:teal;
+    height: 50px;
+}
+ul li{
+    list-style-type: none;
+   float: left;
+   margin-top: 10px;
+   margin-left: 20px;
+   color: orange;
+}

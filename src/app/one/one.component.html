@@ -1,0 +1,12 @@
+
+<!-- <input type="text" (keyup)='change()' [(ngModel)]='info'>
+<h2>{{info}}</h2> -->
+
+<h2>{{Message}}</h2>
+
+<!-- <input type="text" class="form-control" #newInfoItem >
+<button class="btn btn-primary" (click)="addInfo(newInfoItem.value)">Enter</button> -->
+
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>

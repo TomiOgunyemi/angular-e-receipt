@@ -1,0 +1,62 @@
+
+
+<main class="card mx-auto  bg-white mt-4 " style="border-radius: 10px; ">
+    <div class="card-body">
+        <section id="form2">
+           <div class=" text-center">
+            <a href="" class="navbar-brand m-2 text-muted  fw-bold mx-auto mt-4"> 
+                <i class="	fa fa-cutlery fa-lg text-warning"></i>
+                 Lilies  </a>
+           </div>
+            <div  style="font-size: 30px; border-radius: 10px;"  id="signIn" class=" w-50  fw-bold text-warning mt-4 mx-auto  text-center"> SIGN UP</div>
+     
+                  <div class="form-group">
+                   <label for="Description" class="fw-bold mt-3">Name</label>
+                   <input class="form-control" type="text" id="na_me" placeholder="Enter your full name">
+                  </div>
+                   <div class="form-group">
+                       <label for="Username" class="fw-bold mt-3"> Username</label>
+                       <input type="text" class="form-control">
+                   </div>
+               
+                   <div class="form-group">
+                       <label for="Email" class="fw-bold mt-3">Email</label>
+                       <input type="email" class="form-control" #email placeholder=" E.g Paradise@gmail.com">
+                       <h6 id="disp"></h6>
+                   </div>
+
+                   <div class="form-group">
+                       <label for="Password" class="fw-bold mt-3">Password</label>
+                       <input type="password" class="form-control" #password placeholder="*****">
+                   </div>
+           
+                    <section class="row">
+                       <div class="col-sm">
+                           <button style="font-size: 24px;" (click)="submit(email,password)" class="btn bg-warning text-white mt-4 shadow p-1 fw-bold w-100">
+                               Sign Up 
+                           </button>
+                       </div>
+                      <div class=" col-sm">
+                        <a href="Sign_In.html"> <button style="font-size: 24px;"
+                              class="btn text-dark mt-3 shadow border-warning p-1 fw-bold w-100 mt-4">Sign In </button></a>
+                       </div>
+                    </section>
+        </section>
+     </div>
+
+
+     <div>
+        <form action="`${this.base_url}/sqi/countries`" (formGroup)="countriesForm">
+            <h2>Countries</h2>
+            <select name="" #country (change)="set_state(country)" class="form-select" >
+                <option [value]="item.country" *ngFor="let item of countries">{{item.country}}</option>
+            </select>
+            <h2>States</h2>
+            <select name="" id="" class="form-select">
+                <option *ngFor="let item of states" [value]="item" >{{item}}</option>
+            </select>
+        </form>
+     </div>  
+
+
+   </main>

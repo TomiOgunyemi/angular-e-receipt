@@ -1,0 +1,18 @@
+<table class=" table-bordered table">
+    <thead>
+        <tr class="bg-warning">
+            <th class="text-white fw-bold" >S/N</th>
+            <th class="text-white fw-bold">Name </th>
+            <th class="text-white fw-bold">DATE</th>
+            <th class="text-white fw-bold">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of Profile; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td routerLink= "/wallet/{{i}}">{{ transaction.name }}</td>
+            <td>{{ transaction.date | date:'fullyear()' }}</td>
+            <td>{{ transaction.amount |currency:"&#8353;" }}</td>          
+        </tr>
+    </tbody>
+</table>

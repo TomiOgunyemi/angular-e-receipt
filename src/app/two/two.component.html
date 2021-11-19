@@ -1,0 +1,8 @@
+
+<h2>{{info}}</h2>
+
+<app-one [Message]="'This is my favourite page'"></app-one>
+<app-one (newItemEvent)="addItem($event)"></app-one>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+  </ul>

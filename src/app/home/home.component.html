@@ -1,0 +1,63 @@
+
+<!-- <div class="w-50 ms-5">
+    <div class="card p-5 shadow">
+        <h4>Form</h4>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]='data_base'>
+        </div>
+        <div class="form-group mt-4">  
+            <input type="text"  class="form-control" [value]='data_base'>
+        </div>
+        <div class="form-group mt-4">  
+            <input [type]="data_base" class="form-control" [style]="data_base">
+        </div>
+        <h1 *ngIf="data_base">{{data_base}}</h1>
+        <h1 [ngClass]="{'bg-primary':data_base=='blue'}">{{data_base}}</h1>
+        <h1 *ngFor="let item of users; let i=index" (click)="remove(i)">{{i+1+" "+item}}</h1>
+        <h2>{{data_base}}</h2>
+
+        <button class="btn btn-primary" (click)="hello()">Click me</button>
+
+
+    </div>
+</div> -->
+
+    <div>
+       <h2 class="text-center text-white">E-receipts</h2>
+       <table class=" table-bordered table">
+            <thead>
+                <tr class="bg-warning">
+                    <th class="text-white fw-bold" >S/N</th>
+                    <th class="text-white fw-bold">Name of Product </th>
+                    <th class="text-white fw-bold"> Price</th>
+                    <th class="text-white fw-bold">Quantity</th>
+                    <th class="text-white fw-bold">Total</th>
+                    <th class="text-white fw-bold">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of invoice let i=index" >
+                    <td>{{i+1}}</td>
+                    <td><input type="text" [disabled]='item.isLocked' class="form-control"[(ngModel)]="item.product"></td>
+                    <td><input type="number " [disabled]='item.isLocked' class="form-control"[(ngModel)]="item.price" (keyup)="item.total=item.price *item.quantity;"></td>
+                    <td><input type="number" [disabled]='item.isLocked' class="form-control"[(ngModel)]="item.quantity"(keyup)="item.total=item.price *item.quantity;grandtotal()"></td>
+                    <td><input type="number" class="form-control" readonly [(ngModel)]="item.total" disabled></td>
+                    <td><button class="btn btn-danger shadow me-2" (click)=delete(i)>Delete</button>
+                    <button [ngClass]="{'btn btn-danger':item.isLocked,'btn btn-success':!item.isLocked}" (click)="edit(i)">Edit</button>
+                    </td>
+                   
+                </tr>
+
+                <h1 class="text-center">Grand Total: {{ grandTotal  | currency: '&#8353;' }}</h1>
+                <!-- <h2> Hello World{{| slice:0:3}}</h2> -->
+                <h1>{{date |date:"d-MM-Y"}}</h1>
+            </tbody>
+     </table>
+       <button class="btn btn-warning" (click)="add()">ADD</button>
+       <!-- <button class="btn btn-danger"(click)="remove()" >REMOVE</button> -->
+       <h1>{{"10000" | thousand}}</h1>
+    </div>
+
+   
+
+    
